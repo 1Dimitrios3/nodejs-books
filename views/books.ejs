@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <div>
+        <% for(let i = 0; i < books.length; i++) { %>
+    <span><%= books[i].id %> </span>&nbsp;
+    <span> <%= books[i].title %></span>&nbsp;
+    <span> <%= books[i].author %></span>&nbsp;
+    <% console.log(books[i].author) %>
+    <span> <%= books[i].created_at.toLocaleString() %></span>&nbsp;
+    <span> <%= books[i].updated_at.toLocaleString() %></span><br />
+    <span><a href="<%= url + '/edit/' + books[i].id %>"> <button type="submit">Edit</button></a></span><br />
+    <span><button onclick="deleteBook('<%= url %>' + '/delete/' + '<%= books[i].id %>')">Delete</button></span><br />
+       <% } %>
+    </div>
+    <div id="error">
+        <%= message %>
+    </div>
+    <script>
+        function deleteBook(url) {
+            var dialog = confirm("Are you sure you want to delete the specific book?");
+            if(dialog) {
+                window.location.replace(url)
+            } else alert("The book is safe for now!!!");
+        }
+    </script>
+</body>
+
+</html>

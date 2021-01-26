@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+
+    <title>
+        <p>My <%= title %></p>
+    </title>
+</head>
+ 
+<body>
+    <h1>My <%= title %></h1>
+
+    <form action="" method="POST">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author">
+        <input type="submit" value="Add a Book" id="Submit">
+    </form>
+    <div id="message"> 
+        <%= message %>
+    </div>
+</body>
